@@ -22,6 +22,7 @@ import PersonIcon from '@material-ui/icons/Person';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import SearchIcon from '@material-ui/icons/Search';
+import TextsmsIcon from '@material-ui/icons/Textsms';
 
 
 import "./home.css"
@@ -161,7 +162,7 @@ export default function Dashboard() {
         <div className={classes.appBarSpacer} />
         <Container maxWidth="lg" className={classes.container}>
 
-        <Grid container spacing={1} className="usuario">
+        
           <div >
               <section className="usuario">
                 <p>Ola! Boa tarde!</p>
@@ -178,11 +179,11 @@ export default function Dashboard() {
               </section>
 
               <section className="cartoes">
-                <Paper >
+                <Paper  className="pepas">
                   <img 
                 src ="https://www.cpfl.com.br/atendimento-a-consumidores/PublishingImages/Servicos/debitos_2via.png"/>
                 </Paper>
-                <Paper>
+                <Paper className="pepas">
                 <img 
                 src ="https://www.cpfl.com.br/atendimento-a-consumidores/PublishingImages/Servicos/icon-falta-de-energia.png"/>
                 </Paper>
@@ -196,13 +197,13 @@ export default function Dashboard() {
                 <img  
                 src ="https://www.cpfl.com.br/atendimento-a-consumidores/PublishingImages/Servicos/icon-religacao-unidade.png"/>
                 </Paper> 
-                <div className="ajuda">
+                <section className="ajuda">
+                  <TextsmsIcon className="ajuda2"/>
                   <p>Posso de ajudar :)</p>
-                </div>
+                </section>
               </section>
             </div>
-            </Grid>
-          
+           
           <Box pt={4}>
             <Copyright />
           </Box>
