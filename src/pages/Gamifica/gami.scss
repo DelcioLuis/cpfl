@@ -1,0 +1,65 @@
+.container {
+  width: 250px;
+  height: 250px;
+  margin: 30px 0 0 30px;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.circle {
+  margin: 0 15px 15px 0;
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  background-image: radial-gradient(transparent 0%, transparent 60%, lightgray 60%, lightgray 100%);
+  position: relative;
+  overflow: hidden;
+    &:before {
+    content:"";
+    position: absolute;
+    top: 7%;
+    right:7%;
+    width: 172px;
+    height: 172px;
+    border-radius: 50%;
+    background: white;
+    z-index: 10;
+  }
+  &:after {
+    content: "";
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    left: 0;
+    background-repeat: no-repeat;
+    background-size: 100px;
+  }
+}
+
+.circle-12 {
+  span {
+    z-index: 50;
+    color: black;
+    // position: absolute;
+    // top: 50%;
+    // left: 50%;
+    // transform: translate(-50%, -50%);
+  }
+  &:after {
+    background-image: linear-gradient(-45deg, transparent 1%, transparent 50%, darkcyan 50%, darkcyan 100%);
+    background-position: 100px 0px;
+  }
+}
+.circle-25:after {
+     background-image: linear-gradient(darkcyan 0%, darkcyan 100%);
+     background-position: 100px 0px;   
+}
+.circle-37:after {
+     background-image: linear-gradient(darkcyan 0%, darkcyan 100%), linear-gradient(45deg, transparent 1%, transparent 50%, darkcyan 50%, darkcyan 100%);
+    background-position: 100px 0px, 100px 100px;
+}
+.circle-50:after {
+  background-image: linear-gradient(darkcyan 0%, darkcyan 100%), linear-gradient(darkcyan 0%, darkcyan 100%);
+    background-position: 100px 0px, 100px 100px;
+}
+

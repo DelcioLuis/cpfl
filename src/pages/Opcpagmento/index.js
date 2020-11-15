@@ -23,12 +23,16 @@ import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import SearchIcon from '@material-ui/icons/Search';
 import TextsmsIcon from '@material-ui/icons/Textsms';
-import CircularProgress from '@material-ui/core/CircularProgress';
-import Tabs from '@material-ui/core/Tabs';
-import Tab from '@material-ui/core/Tab';
+import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
+import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
+import RemoveIcon from '@material-ui/icons/Remove';
+import AddIcon from '@material-ui/icons/Add';
 
 
-import "./gami.css"
+import "./opgamento.css"
+
+import foto from "./foto.svg";
+import card from "./card.svg";
 
 function Copyright() {
   return (
@@ -164,37 +168,54 @@ export default function Dashboard() {
         <div className={classes.appBarSpacer} />
         <Container maxWidth="lg" className={classes.container}>
 
-           <div>
-
-            <div class="circle circle-50"></div>
+          <div >
             
-             <div className="topgami">
-               <section className="pontop">
-                 <p>Ola</p>
-               </section>
+              <section className="usuario">
+                <section className="scimg">
+                  <img  src={foto}/>
+                </section>
+                <Typography className="titulo"> Método de pagamento</Typography>
+                
+                </section>
+              
+              <section className="user">
+              <p>BOLETO</p>
+              <Button className="para1btn">
+              Gerar boleto
+              </Button>
+              <p>CARTÃO</p>
+            </section>
 
-               <section>
+            <section className="carto">
+                <section>
+                <img className="cartoe"  src={card}/>
+                </section>
 
-               <section>
-                 <h2>Cláudio D. S. Machado</h2>
-               </section>
+                <section>
+                <section className="limite">
+                <ArrowForwardIosIcon/>
+            </section>
+                </section>
+            </section>
 
-               <div className="divtop">
-                 <section>
-                   <p>Tarifa média: R$ 125,20</p>
-                   <p>Ultima fatura: R$ 145,20</p>
-                 </section>
+            <section className="carto">
+                <section>
+                <img className="cartoe"  src={card}/>
+                </section>
 
-                 <section>
-                   <p>N° do cliente: 873873</p>
-                   <p>Cliente desde: 06/2020 </p>
-                 </section>
-               </div>
+                <section>
+                <section className="limite">
+                <ArrowForwardIosIcon/>
+            </section>
+                </section>
+            </section>
 
-               </section>
-
-             </div>
-          </div>
+            <section className="user">
+              <p className="add">Adicionar cartão</p>
+            </section>
+              
+             
+            </div>
            
           <Box pt={4}>
             <Copyright />

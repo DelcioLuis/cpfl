@@ -1,0 +1,38 @@
+.titulos{
+
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 20px;
+line-height: 23px;
+
+color: #00679A;
+}
+.para1btn{
+  width: 100%;
+  height: 48px;
+  background: linear-gradient(90deg, #00699B 0%, #00B7CA 100%);
+  border-radius: 5px;
+  }
+.user{
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.carto{
+  display: flex;
+  align-items: baseline;
+}
+.add{
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 15px;
+line-height: 18px;
+/* identical to box height */
+
+color: #006B9D;
+
+
+}

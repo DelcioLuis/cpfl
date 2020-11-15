@@ -1,0 +1,35 @@
+.bonus{
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 14px;
+line-height: 16px;
+color: #000000;
+}
+.cartoes{
+width: 100%;
+border: 1px solid #C4C4C4;
+box-sizing: border-box;
+padding: 0px;
+align-items: center;
+}
+.cartoe {
+  width: 80%;
+  height: 30px;
+}
+.titulo{
+  font-family: Roboto;
+font-size: 20px;
+font-style: normal;
+font-weight: 700;
+line-height: 23px;
+letter-spacing: 0em;
+text-align: left;
+color: #00679A;
+
+}
+.limite{
+  display: flex;
+  align-items: center;
+  justify-self: self-end;
+}
