@@ -23,12 +23,12 @@ import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import SearchIcon from '@material-ui/icons/Search';
 import TextsmsIcon from '@material-ui/icons/Textsms';
+import CircularProgress from '@material-ui/core/CircularProgress';
+import Tabs from '@material-ui/core/Tabs';
+import Tab from '@material-ui/core/Tab';
 
 
-import "./home.css"
-
-import Modal from "../TelaModal"
-
+import "./gami.css"
 
 function Copyright() {
   return (
@@ -164,48 +164,34 @@ export default function Dashboard() {
         <div className={classes.appBarSpacer} />
         <Container maxWidth="lg" className={classes.container}>
 
-          <Modal/>
-          <div >
-            
-              <section className="usuario">
-                <p>Ola! Boa tarde!</p>
-                <p>Claudio D.S Machado</p>
-                <Button className="buttom" >
-                  Ver meus pontos
-                </Button>
-              </section>
-              
-              <section className="seach">
-                <TextField className="busca"
-                 label="Free solo with text demo" variant="outlined" />
-                 <SearchIcon className="iconsh"/>
-              </section>
+           <div>
+             <div className="topgami">
+               <section className="pontop">
+                 <p>Ola</p>
+               </section>
 
-              <section className="cartoes">
-                <Paper  className="pepas">
-                  <img 
-                src ="https://www.cpfl.com.br/atendimento-a-consumidores/PublishingImages/Servicos/debitos_2via.png"/>
-                </Paper>
-                <Paper className="pepas">
-                <img 
-                src ="https://www.cpfl.com.br/atendimento-a-consumidores/PublishingImages/Servicos/icon-falta-de-energia.png"/>
-                </Paper>
+               <section>
 
-                <Paper >
-                <img 
-                src ="https://www.cpfl.com.br/atendimento-a-consumidores/produtos-e-servicos/SiteAssets/Paginas/Forms/AllItems/icon-ligacao-nova.png"/>
-                </Paper> 
+               <section>
+                 <h2>Cláudio D. S. Machado</h2>
+               </section>
 
-                <Paper >
-                <img  
-                src ="https://www.cpfl.com.br/atendimento-a-consumidores/PublishingImages/Servicos/icon-religacao-unidade.png"/>
-                </Paper> 
-                <section className="ajuda">
-                  <TextsmsIcon className="ajuda2"/>
-                  <p>Posso de ajudar :)</p>
-                </section>
-              </section>
-            </div>
+               <div className="divtop">
+                 <section>
+                   <p>Tarifa média: R$ 125,20</p>
+                   <p>Ultima fatura: R$ 145,20</p>
+                 </section>
+
+                 <section>
+                   <p>N° do cliente: 873873</p>
+                   <p>Cliente desde: 06/2020 </p>
+                 </section>
+               </div>
+
+               </section>
+
+             </div>
+          </div>
            
           <Box pt={4}>
             <Copyright />
