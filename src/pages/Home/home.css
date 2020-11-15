@@ -1,0 +1,52 @@
+
+section{
+  margin-top: 20px;
+}
+.usuario{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.usuario p{
+
+}
+.usuario Button{
+  border-radius: 50px;
+  padding: 8px;
+}
+.busca{
+width: 100%;
+height: 50px;
+border: 1px solid #000000;
+box-sizing: border-box;
+border-radius: 3px;
+}
+.seach{
+  position: relative;
+}
+.iconsh{
+  position: absolute;
+  right: 6%;
+  top: 30%;
+}
+
+.cartoes{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 20px;
+  list-style: none;   
+  position: relative; 
+}
+.ajuda{
+  position: absolute;
+  right: 3%;
+  top: 100%;
+  background-color: cyan;
+  padding: 5px;
+  border-radius: 50px;
+}
+img{
+  width: 100%;
+  height: 100%;
+}
+
