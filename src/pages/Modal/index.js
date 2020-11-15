@@ -12,9 +12,10 @@ import Typography from '@material-ui/core/Typography';
 
 
 
-import "./modal.css"
+import "./ponto.css"
 
-import foto from "./foto.svg";
+import foto from "./foto.svg"
+
 
 const styles = (theme) => ({
   root: {
@@ -67,40 +68,46 @@ export default function CustomizedDialogs() {
             <CloseIcon />
           </IconButton>
           </section>
-        
-
-        <section className="scimg">
-            <img  src={foto}/>
-          </section>
+      
           
           <Typography gutterBottom className="modalcpfl">
-            A CPFL tem novidades para você ;)
+          Confirmação de voucher
           </Typography>
           <div>
             <section >
               <Typography className="para1">
-                Agora as suas contas em débito autómatico geram <span> descontos e prêmios para você!</span>
+              Tem certeza que deseja resgatar esse voucher? Você consumirá 15 pontos
               </Typography>
               
-            </section>
-            <section className>
-              <Button className="para1btn" onClick={() => history.push("/addcard")}>
-                Quero saber mais
-              </Button>
             </section>
 
-            <section className="divbaixo">
-              <Typography className="para1">
-                Sabemos o quanto está dificil nosso momento atual, pensando nisso,
-                em caso de necessidade você pode <span> pagar parte da conta</span> e parcelar o restante!
-              </Typography>
+            <section className="cflbt">
+              <section>
+                <img src={foto} className="cpfl"/>
+                <p>10% PRÓXIMA NA FATURA</p>
+                
+              </section>
+
+              <section className="potoo">
+                
+                  <p>15 Pontos</p>
+                
+              </section>
+
               
             </section>
+            
+
+            
             <section className>
               <Button className="para1btn" onClick={() => history.push("/parcela")}>
-                Quero saber mais
+                Confirmar resgate
               </Button>
             </section>
+            <section>
+            <p>Nao</p>
+            </section>
+            
           </div>
         </DialogContent>
         

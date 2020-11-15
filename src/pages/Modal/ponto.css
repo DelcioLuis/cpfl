@@ -1,0 +1,20 @@
+.cpfl{
+
+  width: 40%;
+}
+.cflbt{
+  display: flex;
+  align-items: center;
+  border-style: solid;
+  border-color: #D9D9D9;
+
+}
+.potoo{
+  background-color: red;
+  display: flex;
+}
+.NAO{
+  display: flex;
+  align-items: center;
+  justify-self: center;
+}

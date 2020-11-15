@@ -28,6 +28,9 @@ import TextsmsIcon from '@material-ui/icons/Textsms';
 import "./home.css"
 
 import Modal from "../TelaModal"
+import Modals from "../Modal"
+
+import foto from "./foto.svg";
 
 
 function Copyright() {
@@ -125,6 +128,8 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Dashboard() {
+
+
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
   const handleDrawerOpen = () => {
@@ -165,11 +170,12 @@ export default function Dashboard() {
         <Container maxWidth="lg" className={classes.container}>
 
           <Modal/>
+          <Modals/>
           <div >
             
               <section className="usuario">
-                <p>Ola! Boa tarde!</p>
-                <p>Claudio D.S Machado</p>
+                <p className="tarde">Ola! Boa tarde!</p>
+                <p className="nome">Claudio D.S Machado</p>
                 <Button className="buttom" >
                   Ver meus pontos
                 </Button>
@@ -182,6 +188,11 @@ export default function Dashboard() {
               </section>
 
               <section className="cartoes">
+              <Paper  className="pepas">
+                  <img 
+                src ={foto}/>
+                </Paper>
+
                 <Paper  className="pepas">
                   <img 
                 src ="https://www.cpfl.com.br/atendimento-a-consumidores/PublishingImages/Servicos/debitos_2via.png"/>

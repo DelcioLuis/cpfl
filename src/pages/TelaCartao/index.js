@@ -180,7 +180,7 @@ export default function Dashboard() {
                 </section>
                 <section className="cartoes">
                     <section>
-                      <p>Método de pagamento</p>
+                      <p>Forma de pagamento</p>
                     </section>
 
                     <section>

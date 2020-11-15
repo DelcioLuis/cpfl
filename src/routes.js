@@ -13,7 +13,7 @@ export default function Routes(){
   return(
       <BrowserRouter>
           <Switch>
-              <Route path="/" exact component={MetodoPagamento} />
+              <Route path="/" exact component={Index} />
               <Route path="/modal" exact component={Modal} />
               <Route path="/gami" exact component={Gamifica} />
               <Route path="/addcard" exact component={CadCartao} />

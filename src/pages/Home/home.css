@@ -42,13 +42,41 @@ border-radius: 11.5px;
 border-width: 0px;
 
 }
+.nome{
+  /* Cláudio D. S. Machado */
+
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 18px;
+line-height: 21px;
+/* identical to box height */
+text-align: center;
+
+color: #00699B;
+}
+.tarde{
+
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 21px;
+/* identical to box height */
+
+color: #929292;
+
+
+}
+
 
 .ajuda{
   display: flex;
   flex-direction: column;
   position: absolute;
-  right: -3%;
-  top: 60%;
+  right: 3%;
+  top: 74%;
   background-color: cyan;
   opacity: 0.5;
   padding: 2px;
