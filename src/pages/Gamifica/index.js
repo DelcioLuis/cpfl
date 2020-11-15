@@ -52,7 +52,7 @@ function Copyright() {
 
 function Gamification() {
 
-  const clienteId = "5fb05d60a3008ba9c6e59137";
+  const clienteId = "5fb05d60a3008ba9c6e59137"; // Delcio
 
   const [quantidadePontosAtual, setQuantidadePontosAtual] = useState([]);
   const [quantidadeXP, setQuantidadeXP] = useState([]);
