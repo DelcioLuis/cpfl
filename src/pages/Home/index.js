@@ -18,7 +18,6 @@ import Paper from '@material-ui/core/Paper';
 import Link from '@material-ui/core/Link';
 import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
-import ListItemText from '@material-ui/core/ListItemText';
 import PersonIcon from '@material-ui/icons/Person';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
@@ -26,6 +25,7 @@ import SearchIcon from '@material-ui/icons/Search';
 import TextsmsIcon from '@material-ui/icons/Textsms';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
+import ListItemText from '@material-ui/core/ListItemText';
 
 import "./home.css"
 
@@ -195,19 +195,19 @@ export default function Dashboard() {
       <ListItemText primary="Perfil" />
     </ListItem>
 
-    <ListItem  button onClick={() => history.push("/gami")}>
+    <ListItem  button onClick={() => history.push("/debitoAutomatico")}>
       <ListItemIcon>
       </ListItemIcon>
       <ListItemText primary="Debito Automatico" />
     </ListItem>
 
-    <ListItem  button onClick={() => history.push("/gami")}>
+    <ListItem  button onClick={() => history.push("/parcela")}>
       <ListItemIcon>
       </ListItemIcon>
       <ListItemText primary="Parcelas" />
     </ListItem>
 
-    <ListItem  button onClick={() => history.push("/gami")}>
+    <ListItem  button onClick={() => history.push("/oppagame")}>
       <ListItemIcon>
       </ListItemIcon>
       <ListItemText primary="Pagamentos" />

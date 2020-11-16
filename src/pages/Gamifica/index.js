@@ -26,7 +26,10 @@ import TextsmsIcon from '@material-ui/icons/Textsms';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
-
+import { useHistory,useParams } from 'react-router-dom';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
+import ListItemText from '@material-ui/core/ListItemText';
 
 import "./gami.css"
 
@@ -51,7 +54,7 @@ function Copyright() {
 }
 
 function Gamification() {
-
+  
   const clienteId = "5fb05d60a3008ba9c6e59137"; // Delcio
 
   const [quantidadePontosAtual, setQuantidadePontosAtual] = useState([]);
@@ -155,7 +158,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Dashboard() {
-
+  const history = useHistory();
   const [value, setValue] = React.useState(0);
 
   const handleChange = (event, newValue) => {
@@ -201,6 +204,51 @@ export default function Dashboard() {
           </IconButton>
         </Toolbar>
       </AppBar>
+      <Drawer
+      variant="persistent"
+      classes={{
+        paper: clsx(classes.drawerPaper, !open && classes.drawerPaperClose),
+      }}
+      open={open}
+    >
+      <div className={classes.toolbarIcon}>
+          <IconButton onClick={handleDrawerClose}>
+            <ChevronLeftIcon />
+          </IconButton>
+        </div>
+        <div>
+      <ListItem  button >
+      <ListItemIcon>
+      </ListItemIcon>
+      <ListItemText primary="Home"  onClick={() => history.push("/")}/>
+    </ListItem>
+
+    <ListItem  button style={{background:"#ddd"}} onClick={() => history.push("/gami")}>
+      <ListItemIcon>
+      </ListItemIcon>
+      <ListItemText primary="Perfil" />
+    </ListItem>
+
+    <ListItem  button onClick={() => history.push("/debitoAutomatico")}>
+      <ListItemIcon>
+      </ListItemIcon>
+      <ListItemText primary="Debito Automatico" />
+    </ListItem>
+
+    <ListItem  button onClick={() => history.push("/parcela")}>
+      <ListItemIcon>
+      </ListItemIcon>
+      <ListItemText primary="Parcelas" />
+    </ListItem>
+
+    <ListItem  button onClick={() => history.push("/oppagame")}>
+      <ListItemIcon>
+      </ListItemIcon>
+      <ListItemText primary="Pagamentos" />
+    </ListItem>
+    </div>
+
+      </Drawer>
       
       <main className={classes.content}>
         <div className={classes.appBarSpacer} />

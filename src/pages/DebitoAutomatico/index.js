@@ -17,6 +17,10 @@ import Paper from '@material-ui/core/Paper';
 import Link from '@material-ui/core/Link';
 import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
+import { useHistory,useParams } from 'react-router-dom';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
+import ListItemText from '@material-ui/core/ListItemText';
 
 import PersonIcon from '@material-ui/icons/Person';
 import Button from '@material-ui/core/Button';
@@ -128,7 +132,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Dashboard() {
-
+  const history = useHistory();
   const [pontosGanhosBonusPorAtingirNovoNivel, setPontosGanhosBonusPorAtingirNovoNivel] = useState(0);
   const [totalPontosCliente, setTotalPontosCliente] = useState(0);
   const [mensagem, setMensagem] = useState('');
@@ -194,6 +198,51 @@ export default function Dashboard() {
           </IconButton>
         </Toolbar>
       </AppBar>
+      <Drawer
+      variant="persistent"
+      classes={{
+        paper: clsx(classes.drawerPaper, !open && classes.drawerPaperClose),
+      }}
+      open={open}
+    >
+      <div className={classes.toolbarIcon}>
+          <IconButton onClick={handleDrawerClose}>
+            <ChevronLeftIcon />
+          </IconButton>
+        </div>
+        <div>
+      <ListItem  button >
+      <ListItemIcon>
+      </ListItemIcon>
+      <ListItemText primary="Home"  onClick={() => history.push("/")}/>
+    </ListItem>
+
+    <ListItem  button  onClick={() => history.push("/gami")}>
+      <ListItemIcon>
+      </ListItemIcon>
+      <ListItemText primary="Perfil" />
+    </ListItem>
+
+    <ListItem  button style={{background:"#ddd"}} onClick={() => history.push("/debitoAutomatico")}>
+      <ListItemIcon>
+      </ListItemIcon>
+      <ListItemText primary="Debito Automatico" />
+    </ListItem>
+
+    <ListItem  button onClick={() => history.push("/parcela")}>
+      <ListItemIcon>
+      </ListItemIcon>
+      <ListItemText primary="Parcelas" />
+    </ListItem>
+
+    <ListItem  button onClick={() => history.push("/oppagame")}>
+      <ListItemIcon>
+      </ListItemIcon>
+      <ListItemText primary="Pagamentos" />
+    </ListItem>
+    </div>
+
+      </Drawer>
       
       <main className={classes.content}>
         <div className={classes.appBarSpacer} />
