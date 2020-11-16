@@ -22,7 +22,9 @@ export default function ResgatePontos() {
       totalPontosCliente = response.data.TotalPontosCliente;
       mensagem = response.data.Mensagem;
       
-      console.log(mensagem);
+      console.log({ totalPontosCliente, mensagem });
+
+      return { totalPontosCliente, mensagem };
     }
 
     loadScores();
