@@ -155,6 +155,12 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Dashboard() {
+
+  const [value, setValue] = React.useState(0);
+
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+  };
   
   const classes = useStyles();
   const [open, setOpen] = useState(false);
@@ -228,7 +234,27 @@ export default function Dashboard() {
                </div>
 
                </section>
+               
 
+             </div>
+
+             <div>
+               <Paper>
+                <Tabs
+                  value={value}
+                  onChange={handleChange}
+                  indicatorColor="primary"
+                  textColor="primary"
+                  centered
+                >
+                  <Tab label="EXTRATO" />
+                  <Tab label="RESGATAR" />
+                  <Tab label="COMO GANHAR" />
+                </Tabs>
+              </Paper>
+              <Paper>
+                
+              </Paper>
              </div>
           </div>
            

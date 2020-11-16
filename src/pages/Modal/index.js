@@ -81,21 +81,17 @@ export default function CustomizedDialogs() {
               
             </section>
 
-            <section className="cflbt">
-              <section>
-                <img src={foto} className="cpfl"/>
+            <div className="cflbt" className="cpfl">
+              
+                <img src={foto} /> 
                 <p>10% PRÓXIMA NA FATURA</p>
-                
-              </section>
-
-              <section className="potoo">
-                
-                  <p>15 Pontos</p>
-                
-              </section>
+                <p>Desconto de 5% na fatura (Valor maximo de desconto de 20$)</p>
+              
+              
 
               
-            </section>
+
+            </div>
             
 
             
@@ -104,9 +100,13 @@ export default function CustomizedDialogs() {
                 Confirmar resgate
               </Button>
             </section>
-            <section>
-            <p>Nao</p>
+
+            <section className>
+              <Button className="poyto" onClick={() => history.push("/parcela")}>
+                Nao
+              </Button>
             </section>
+            
             
           </div>
         </DialogContent>

@@ -1,4 +1,5 @@
 import React from 'react';
+import { useHistory,useParams } from 'react-router-dom';
 import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -17,13 +18,14 @@ import Paper from '@material-ui/core/Paper';
 import Link from '@material-ui/core/Link';
 import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
-
+import ListItemText from '@material-ui/core/ListItemText';
 import PersonIcon from '@material-ui/icons/Person';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import SearchIcon from '@material-ui/icons/Search';
 import TextsmsIcon from '@material-ui/icons/Textsms';
-
+import ListItem from '@material-ui/core/ListItem';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
 
 import "./home.css"
 
@@ -31,6 +33,9 @@ import Modal from "../TelaModal"
 import Modals from "../Modal"
 
 import foto from "./foto.svg";
+
+import Drawers from "../Drawer"
+
 
 
 function Copyright() {
@@ -53,7 +58,7 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
   },
   toolbar: {
-    paddingRight: 24, // keep right padding when drawer closed
+    paddingRight: 4, // keep right padding when drawer closed
   },
   toolbarIcon: {
     display: 'flex',
@@ -101,9 +106,9 @@ const useStyles = makeStyles((theme) => ({
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.leavingScreen,
     }),
-    width: theme.spacing(7),
+    width: theme.spacing(0),
     [theme.breakpoints.up('sm')]: {
-      width: theme.spacing(9),
+      width: theme.spacing(0),
     },
   },
   appBarSpacer: theme.mixins.toolbar,
@@ -130,6 +135,7 @@ const useStyles = makeStyles((theme) => ({
 export default function Dashboard() {
 
 
+  const history = useHistory();
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
   const handleDrawerOpen = () => {
@@ -164,6 +170,51 @@ export default function Dashboard() {
           </IconButton>
         </Toolbar>
       </AppBar>
+      <Drawer
+      variant="persistent"
+      classes={{
+        paper: clsx(classes.drawerPaper, !open && classes.drawerPaperClose),
+      }}
+      open={open}
+    >
+      <div className={classes.toolbarIcon}>
+          <IconButton onClick={handleDrawerClose}>
+            <ChevronLeftIcon />
+          </IconButton>
+        </div>
+        <div>
+      <ListItem  button style={{background:"#ddd"}}>
+      <ListItemIcon>
+      </ListItemIcon>
+      <ListItemText primary="Home"  onClick={() => history.push("/")}/>
+    </ListItem>
+
+    <ListItem  button onClick={() => history.push("/gami")}>
+      <ListItemIcon>
+      </ListItemIcon>
+      <ListItemText primary="Perfil" />
+    </ListItem>
+
+    <ListItem  button onClick={() => history.push("/gami")}>
+      <ListItemIcon>
+      </ListItemIcon>
+      <ListItemText primary="Debito Automatico" />
+    </ListItem>
+
+    <ListItem  button onClick={() => history.push("/gami")}>
+      <ListItemIcon>
+      </ListItemIcon>
+      <ListItemText primary="Parcelas" />
+    </ListItem>
+
+    <ListItem  button onClick={() => history.push("/gami")}>
+      <ListItemIcon>
+      </ListItemIcon>
+      <ListItemText primary="Pagamentos" />
+    </ListItem>
+    </div>
+
+      </Drawer>
       
       <main className={classes.content}>
         <div className={classes.appBarSpacer} />
@@ -171,6 +222,7 @@ export default function Dashboard() {
 
           <Modal/>
           <Modals/>
+          
           <div >
             
               <section className="usuario">
@@ -217,6 +269,7 @@ export default function Dashboard() {
                 </section>
               </section>
             </div>
+            <Drawer/>
            
           <Box pt={4}>
             <Copyright />
