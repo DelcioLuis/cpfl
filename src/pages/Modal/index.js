@@ -10,12 +10,10 @@ import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
 import Typography from '@material-ui/core/Typography';
 
-
-
 import "./ponto.css"
 
 import foto from "./foto.svg"
-
+import ResgatePontos from '../../services/ResgatePontos';
 
 const styles = (theme) => ({
   root: {
@@ -29,8 +27,6 @@ const styles = (theme) => ({
     color: theme.palette.grey[500],
   },
 });
-
-
 
 const DialogContent = withStyles((theme) => ({
   root: {
@@ -46,6 +42,8 @@ const DialogActions = withStyles((theme) => ({
 }))(MuiDialogActions);
 
 export default function CustomizedDialogs() {
+
+  ResgatePontos();
 
   const history = useHistory();
 

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -31,6 +31,7 @@ import "./catao.css"
 
 import foto from "./foto.svg";
 import card from "./card.svg";
+import api from '../../services/api';
 
 function Copyright() {
   return (
@@ -127,6 +128,38 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Dashboard() {
+
+  const [pontosGanhosBonusPorAtingirNovoNivel, setPontosGanhosBonusPorAtingirNovoNivel] = useState(0);
+  const [totalPontosCliente, setTotalPontosCliente] = useState(0);
+  const [mensagem, setMensagem] = useState('');
+  const [quantidadePontosXpNecessariosParaAtingirProximoNivel, setQuantidadePontosXpNecessariosParaAtingirProximoNivel] = useState(0);
+  
+  async function AdicionarPontosAoCliente(event) {
+  
+    event.preventDefault();
+
+    const idCliente = "5fb05d60a3008ba9c6e59137"; // Delcio
+
+    const quantidadeNovosPontosDebitoAutomatico = 5;
+    
+    const response = await api.post('/pontuacaoCliente/adicionarPontosAoCliente', {
+      clienteId: idCliente,
+      quantidadeNovosPontos: quantidadeNovosPontosDebitoAutomatico
+    });
+
+    setPontosGanhosBonusPorAtingirNovoNivel(response.data.PontosGanhosBonusPorAtingirNovoNivel);
+    setTotalPontosCliente(response.data.TotalPontosCliente);
+    setQuantidadePontosXpNecessariosParaAtingirProximoNivel(response.data.QuantidadePontosXpNecessariosParaAtingirProximoNivel);
+    setMensagem(response.data.Mensagem);
+
+    console.log({
+      pontosGanhosBonusPorAtingirNovoNivel,
+      totalPontosCliente,
+      quantidadePontosXpNecessariosParaAtingirProximoNivel,
+      mensagem
+    });
+  }
+
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
   const handleDrawerOpen = () => {
@@ -207,7 +240,10 @@ export default function Dashboard() {
 
               </section>
               <section className>
-              <Button className="para1btn">
+              <Button
+                className="para1btn"
+                onClick={AdicionarPontosAoCliente}
+              >
                 Fazer Cadastro
               </Button>
             </section>
