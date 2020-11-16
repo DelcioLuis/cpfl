@@ -13,7 +13,7 @@ import Typography from '@material-ui/core/Typography';
 import "./ponto.css"
 
 import foto from "./foto.svg"
-import ResgatePontos from '../Gamifica/ResgatePontos';
+import ResgatePontos from '../../services/ResgatePontos';
 
 const styles = (theme) => ({
   root: {

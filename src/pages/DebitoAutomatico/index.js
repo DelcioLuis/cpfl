@@ -31,6 +31,7 @@ import "./catao.css"
 
 import foto from "./foto.svg";
 import card from "./card.svg";
+import api from '../../services/api';
 
 function Copyright() {
   return (
@@ -127,6 +128,45 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Dashboard() {
+
+  async function AdicionarPontosAoCliente(event) {
+  
+    event.preventDefault();
+
+    const idCliente = "5fb05d60a3008ba9c6e59137"; // Delcio
+
+    const quantidadeNovosPontosDebitoAutomatico = 5;
+    let pontosGanhosBonusPorAtingirNovoNivel = 0;
+    let totalPontosCliente = 0;
+    let quantidadePontosXpNecessariosParaAtingirProximoNivel = 0;
+
+    let mensagem = "";
+
+    const response = await api.post('/pontuacaoCliente/adicionarPontosAoCliente', {
+      clienteId: idCliente,
+      quantidadeNovosPontos: quantidadeNovosPontosDebitoAutomatico
+    });
+
+    pontosGanhosBonusPorAtingirNovoNivel = response.data.PontosGanhosBonusPorAtingirNovoNivel;
+    totalPontosCliente = response.data.TotalPontosCliente;
+    quantidadePontosXpNecessariosParaAtingirProximoNivel = response.data.QuantidadePontosXpNecessariosParaAtingirProximoNivel;
+    mensagem = response.data.Mensagem;
+    
+    console.log({
+      pontosGanhosBonusPorAtingirNovoNivel,
+      totalPontosCliente,
+      quantidadePontosXpNecessariosParaAtingirProximoNivel,
+      mensagem
+    });
+
+    return {
+      pontosGanhosBonusPorAtingirNovoNivel,
+      totalPontosCliente,
+      quantidadePontosXpNecessariosParaAtingirProximoNivel,
+      mensagem
+    };
+  }
+
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
   const handleDrawerOpen = () => {
@@ -207,7 +247,10 @@ export default function Dashboard() {
 
               </section>
               <section className>
-              <Button className="para1btn">
+              <Button
+                className="para1btn"
+                onClick={AdicionarPontosAoCliente}
+              >
                 Fazer Cadastro
               </Button>
             </section>
