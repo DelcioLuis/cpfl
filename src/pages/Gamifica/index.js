@@ -316,7 +316,196 @@ export default function Dashboard() {
 
           <div>
             
+            
           </div>
+          
+          { tela == 1 ?(
+            <Grid>
+            <div class="aba">
+          <div class="voucher">
+              <div class="partdados">
+  
+                  <div class="titlevoucher">
+                      <img src="Visa_Credit.webp" alt="" class="logovoucher" />
+                      <h3 class="title1">10% NA PRÓXIMA FATURA</h3>            
+                  </div>
+                  <p class="descricaovoucher">Desconto de 10% na fatura (Valor maximo de desconto de R$20,00).</p>
+  
+              </div>
+              <a class="partpontos">
+                      <p>Resgatado em 15/11/20</p>
+  
+              </a>
+          </div>
+  
+  
+          <div class="voucher">
+              <div class="partdados">
+              <div class="titlevoucher">
+                  <img src="Visa_Credit.webp" alt="" class="logovoucher" />
+                  <h3 class="title1">DESCONTO DE 15% NO PARCEIRO1</h3>            
+              </div>
+              <p class="descricaovoucher">Desconto de 15% em Lampadas de LED (Valor maximo de desconto de 20$) </p>
+  
+              </div>
+              <a class="partpontosdesativ">
+                  
+                      <p>Resgatado em 12/05/20</p>
+  
+              </a>
+          </div>
+          <div class="voucher">
+              <div class="partdados">
+              <div class="titlevoucher">
+                  <img src="Visa_Credit.webp" alt="" class="logovoucher" />
+                  <h3 class="title1">DESCONTO DE 15% NO PARCEIRO1</h3>            
+              </div>
+              <p class="descricaovoucher">Desconto de 15% em Lampadas de LED (Valor maximo de desconto de 20$) </p>
+  
+              </div>
+              <a class="partpontosdesativ">
+                  
+                      <p>Resgatado em 05/08/20</p>
+  
+  
+              </a>
+          </div>
+  
+  
+  
+        </div> 
+        </Grid>
+          ):( 
+            tela == 2?(<Grid>
+
+              <div class="aba">
+                <div class="voucher">
+                    <div class="partdados">
+                    <div class="titlevoucher">
+                        <img src="Visa_Credit.webp" alt="" class="logovoucher" />
+                        <h3 class="title1">PAGAMENTO EM DÉBITO AUTOMÁTICO </h3>            
+                    </div>
+                    <p class="descricaovoucher">A cada pagamento feito em débito automático.</p>
+        
+                    </div>
+                    <a class="partpontos">
+                        <div class="pontos">
+                            <p class="qtdpontos">+15</p>
+                            <p class="pontuacao">PONTOS</p>
+                        </div>
+                            
+        
+        
+                    </a>
+                </div>
+                <div class="voucher">
+                    <div class="partdados">
+                    <div class="titlevoucher">
+                        <img src="Visa_Credit.webp" alt="" class="logovoucher" />
+                        <h3 class="title1">6 MESES DE  DÉBITO AUTOMÁTICO </h3>            
+                    </div>
+                    <p class="descricaovoucher">Após o 6° mês com pagamento da fatura via débito automático </p>
+        
+                    </div>
+                    <a class="partpontos">
+                        <div class="pontos">
+                            <p class="qtdpontos">+25</p>
+                            <p class="pontuacao">PONTOS</p>
+                        </div>
+                            
+        
+        
+                    </a>
+                </div>
+        
+                <div class="voucher">
+                    <div class="partdados">
+                    <div class="titlevoucher">
+                        <img src="Visa_Credit.webp" alt="" class="logovoucher" />
+                        <h3 class="title1">2 MESES CONSECUTIVOS DE ECONOMIA</h3>            
+                    </div>
+                    <p class="descricaovoucher">A cada 2 meses consecutivos que sua fatura vier abaixo da sua média. </p>
+        
+                    </div>
+                    <a class="partpontos">
+                        <div class="pontos">
+                            <p class="qtdpontos">+30</p>
+                            <p class="pontuacao">PONTOS</p>
+                        </div>
+                            
+        
+        
+                    </a>
+                </div>
+        
+              </div> 
+              </Grid>):(
+                <div class="aba">
+                <div class="voucher">
+                    <div class="partdados">
+                    <div class="titlevoucher">
+                        <img src="Visa_Credit.webp" alt="" class="logovoucher" />
+                        <h3 class="title1">10% NA PRÓXIMA FATURA</h3>            
+                    </div>
+                    <p class="descricaovoucher">Desconto de 10% na fatura (Valor maximo de desconto de R$20,00).</p>
+        
+                    </div>
+                    <a class="partpontos">
+                        <div class="pontos">
+                            <p class="qtdpontos">15</p>
+                            <p class="pontuacao">PONTOS</p>
+                        </div>
+                            <p>resgatar</p>
+        
+        
+                    </a>
+                </div>
+                <div class="voucher">
+                    <div class="partdados">
+                    <div class="titlevoucher">
+                        <img src="Visa_Credit.webp" alt="" class="logovoucher" />
+                        <h3 class="title1">DESCONTO DE 15% NO PARCEIRO1</h3>            
+                    </div>
+                    <p class="descricaovoucher">Desconto de 15% em Lampadas de LED (Valor maximo de desconto de 20$) </p>
+        
+                    </div>
+                    <a class="partpontos">
+                        <div class="pontos">
+                            <p class="qtdpontos">25</p>
+                            <p class="pontuacao">PONTOS</p>
+                        </div>
+                            <p>resgatar</p>
+        
+        
+                    </a>
+                </div>
+        
+                <div class="voucher">
+                    <div class="partdados">
+                    <div class="titlevoucher">
+                        <img src="Visa_Credit.webp" alt="" class="logovoucher" />
+                        <h3 class="title1">DESCONTO DE 25% NO PARCEIRO2</h3>            
+                    </div>
+                    <p class="descricaovoucher">Desconto de 15% em aquecedores solares (valor maximo de desconto de 20$) </p>
+        
+                    </div>
+                    <a class="partpontos">
+                        <div class="pontos">
+                            <p class="qtdpontos">30</p>
+                            <p class="pontuacao">PONTOS</p>
+                        </div>
+                            <p>resgatar</p>
+        
+        
+                    </a>
+                </div>
+        
+              </div> 
+              )
+          )}
+          
+
+      
           
            
           <Box pt={4}>
