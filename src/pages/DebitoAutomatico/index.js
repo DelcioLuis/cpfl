@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -129,6 +129,11 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Dashboard() {
 
+  const [pontosGanhosBonusPorAtingirNovoNivel, setPontosGanhosBonusPorAtingirNovoNivel] = useState(0);
+  const [totalPontosCliente, setTotalPontosCliente] = useState(0);
+  const [mensagem, setMensagem] = useState('');
+  const [quantidadePontosXpNecessariosParaAtingirProximoNivel, setQuantidadePontosXpNecessariosParaAtingirProximoNivel] = useState(0);
+  
   async function AdicionarPontosAoCliente(event) {
   
     event.preventDefault();
@@ -136,35 +141,23 @@ export default function Dashboard() {
     const idCliente = "5fb05d60a3008ba9c6e59137"; // Delcio
 
     const quantidadeNovosPontosDebitoAutomatico = 5;
-    let pontosGanhosBonusPorAtingirNovoNivel = 0;
-    let totalPontosCliente = 0;
-    let quantidadePontosXpNecessariosParaAtingirProximoNivel = 0;
-
-    let mensagem = "";
-
+    
     const response = await api.post('/pontuacaoCliente/adicionarPontosAoCliente', {
       clienteId: idCliente,
       quantidadeNovosPontos: quantidadeNovosPontosDebitoAutomatico
     });
 
-    pontosGanhosBonusPorAtingirNovoNivel = response.data.PontosGanhosBonusPorAtingirNovoNivel;
-    totalPontosCliente = response.data.TotalPontosCliente;
-    quantidadePontosXpNecessariosParaAtingirProximoNivel = response.data.QuantidadePontosXpNecessariosParaAtingirProximoNivel;
-    mensagem = response.data.Mensagem;
-    
+    setPontosGanhosBonusPorAtingirNovoNivel(response.data.PontosGanhosBonusPorAtingirNovoNivel);
+    setTotalPontosCliente(response.data.TotalPontosCliente);
+    setQuantidadePontosXpNecessariosParaAtingirProximoNivel(response.data.QuantidadePontosXpNecessariosParaAtingirProximoNivel);
+    setMensagem(response.data.Mensagem);
+
     console.log({
       pontosGanhosBonusPorAtingirNovoNivel,
       totalPontosCliente,
       quantidadePontosXpNecessariosParaAtingirProximoNivel,
       mensagem
     });
-
-    return {
-      pontosGanhosBonusPorAtingirNovoNivel,
-      totalPontosCliente,
-      quantidadePontosXpNecessariosParaAtingirProximoNivel,
-      mensagem
-    };
   }
 
   const classes = useStyles();
