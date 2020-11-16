@@ -221,8 +221,7 @@ export default function Dashboard() {
         <Container maxWidth="lg" className={classes.container}>
 
           <Modal/>
-          <Modals/>
-          
+
           <div >
             
               <section className="usuario">

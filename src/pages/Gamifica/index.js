@@ -168,6 +168,8 @@ export default function Dashboard() {
   const classes = useStyles();
   const [open, setOpen] = useState(false);
 
+  const [tela, settela] = useState(1);
+
   const handleDrawerOpen = () => {
     setOpen(true);
   };
@@ -260,7 +262,13 @@ export default function Dashboard() {
             
              <div className="topgami">
                <section className="pontop">
-                 <p>Ola</p>
+
+                 <section className="pontyer">
+
+                    <p>25</p>
+                    <p>Pontos</p>
+                 </section>
+                 
                </section>
 
                <section>
@@ -295,9 +303,9 @@ export default function Dashboard() {
                   textColor="primary"
                   centered
                 >
-                  <Tab label="EXTRATO" />
-                  <Tab label="RESGATAR" />
-                  <Tab label="COMO GANHAR" />
+                  <Tab label="EXTRATO" onClick={() => settela(1)}/>
+                  <Tab label="RESGATAR" onClick={() => settela(2)}/>
+                  <Tab label="COMO GANHAR" onClick={() => settela(3)}/>
                 </Tabs>
               </Paper>
               <Paper>
@@ -305,6 +313,11 @@ export default function Dashboard() {
               </Paper>
              </div>
           </div>
+
+          <div>
+            
+          </div>
+          
            
           <Box pt={4}>
             <Copyright />
