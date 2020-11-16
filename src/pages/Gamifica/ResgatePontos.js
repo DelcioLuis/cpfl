@@ -5,7 +5,7 @@ export default function ResgatePontos() {
 
   const idCliente = "5fb05d60a3008ba9c6e59137"; // Delcio
 
-  const [pontosResgatados, setPontosResgatados] = useState(5); // trocar pelo valor resgatado na tela
+  const [pontosResgatados, setPontosResgatados] = useState(0); // trocar pelo valor resgatado na tela
 
   let totalPontosCliente = 0;
   let mensagem = "";
